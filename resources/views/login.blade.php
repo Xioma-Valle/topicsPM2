@@ -4,16 +4,20 @@
     <form action="/login" method="POST">
         @csrf
         <div>
-            <label for="">Email</label>
-            <input type="text" name="email">
+            <x-layout title="password" type="text" nombre="password"/>
+            @error('password')
+            <p>{{$message}}</p>
+            @enderror
         </div>
         <div>
-            <label for="">Password</label>
-            <input type="text" name="password">
+            <x-layout title="email" type="text" nombre="email"/>
+            @error('email')
+            <p>{{$message}}</p>
+            @enderror
         </div>
         <div>
             <button type="submit">Log In</button>
         </div>
-
     </form>
 </div>
+
